@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 import { CardGrid } from '../components';
+import { ImageListAD } from '../components/ImageListAD';
 
 export const HomePage = () => {
    return (
@@ -10,6 +11,7 @@ export const HomePage = () => {
          </Typography>
          <hr />
          <CardGrid />
+         <ImageListAD />
       </div>
    );
 };
