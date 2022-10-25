@@ -14,7 +14,14 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export const NavBar = () => {
    return (
-      <AppBar sx={{ margin: 0, padding: 0, position: 'sticky', top: 0 }}>
+      <AppBar
+         sx={{
+            margin: 0,
+            padding: 0,
+            position: 'sticky',
+            top: 0,
+         }}
+      >
          <Toolbar>
             <Typography variant='h4' component='div' sx={{ flexGrow: 1 }}>
                <NavLink

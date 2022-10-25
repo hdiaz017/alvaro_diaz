@@ -11,6 +11,9 @@ const darkTheme = createTheme({
    palette: {
       mode: 'dark',
    },
+   typography: {
+      fontFamily: 'Poppins',
+   },
 });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
