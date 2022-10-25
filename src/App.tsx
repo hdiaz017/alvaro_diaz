@@ -1,12 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
+import { Footer, NavBar } from './components';
+
 import { AboutPage, GalleryPage, HomePage, ShopPage } from './pages/';
 
 function App() {
    return (
       <div>
          <NavBar />
-
          <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='about' element={<AboutPage />} />
@@ -14,6 +14,7 @@ function App() {
             <Route path='gallery' element={<GalleryPage />} />
             <Route path='/*' element={<Navigate to='/' />} />
          </Routes>
+         <Footer />
       </div>
    );
 }

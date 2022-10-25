@@ -14,10 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export const NavBar = () => {
    return (
-      <AppBar
-         position='static'
-         sx={{ margin: 0, padding: 0, position: 'sticky', top: 0 }}
-      >
+      <AppBar sx={{ margin: 0, padding: 0, position: 'sticky', top: 0 }}>
          <Toolbar>
             <Typography variant='h4' component='div' sx={{ flexGrow: 1 }}>
                <NavLink
@@ -42,7 +39,7 @@ export const NavBar = () => {
                variant='outlined'
                sx={{ paddingRight: '2rem' }}
             />
-            <Stack direction='row' spacing={3}>
+            <Stack direction='row' spacing={3} marginRight={3}>
                <Typography>
                   <NavLink
                      to='gallery'
@@ -68,11 +65,7 @@ export const NavBar = () => {
                   </NavLink>
                </Typography>
             </Stack>
-            <IconButton
-               edge='end'
-               aria-label='logo'
-               sx={{ paddingLeft: '2rem' }}
-            >
+            <IconButton edge='end' aria-label='logo'>
                <ShoppingCartIcon />
             </IconButton>
          </Toolbar>
