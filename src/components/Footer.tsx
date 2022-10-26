@@ -12,6 +12,7 @@ import {
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import React from 'react';
 
 export const Footer = () => {
@@ -28,12 +29,24 @@ export const Footer = () => {
             marginTop: '50px',
          }}
       >
-         <Toolbar>
-            <Typography variant='body1' component='div' marginRight={3}>
-               2022 © Alvaro Díaz
+         <Toolbar
+            sx={{
+               display: 'flex',
+               justifyContent: 'space-around',
+            }}
+         >
+            <Typography
+               variant='body1'
+               component='div'
+               // marginRight={5}
+               fontSize='.85rem'
+               fontWeight={100}
+            >
+               Copyright 2022 © Alvaro Díaz
             </Typography>
 
-            <Divider orientation='vertical' flexItem variant='middle' />
+            {/* <Divider orientation='vertical' flexItem variant='middle' /> */}
+            <Box></Box>
             <Stack spacing={2} direction='row' marginLeft={2}>
                <Link
                   href='https://www.facebook.com/alvaro.diaz.9237'
@@ -41,7 +54,7 @@ export const Footer = () => {
                   target='_blank'
                >
                   <IconButton>
-                     <FacebookIcon />
+                     <FacebookIcon fontSize='small' />
                   </IconButton>
                </Link>
                <Link
@@ -50,7 +63,7 @@ export const Footer = () => {
                   target='_blank'
                >
                   <IconButton>
-                     <TwitterIcon />
+                     <TwitterIcon fontSize='small' />
                   </IconButton>
                </Link>
 
@@ -60,7 +73,16 @@ export const Footer = () => {
                   target='_blank'
                >
                   <IconButton>
-                     <InstagramIcon />
+                     <InstagramIcon fontSize='small' />
+                  </IconButton>
+               </Link>
+               <Link
+                  href='https://t.me/AlvinGrana'
+                  rel='noopener'
+                  target='_blank'
+               >
+                  <IconButton>
+                     <TelegramIcon fontSize='small' />
                   </IconButton>
                </Link>
             </Stack>
