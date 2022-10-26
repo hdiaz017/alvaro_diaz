@@ -6,20 +6,37 @@ export const CardGrid = () => {
    const array = Array(10).fill('');
 
    const cards = array.map((a) => (
-      <Grid item xs={4}>
+      <Grid
+         item
+         xs='auto'
+         sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: '20px',
+         }}
+      >
          <CardImage />
       </Grid>
    ));
    return (
       <Box
          sx={{
-            display: 'flex',
-            justifyContent: 'center',
             alignItems: 'center',
-            margin: 0,
+            justifyContent: 'center',
+            display: 'flex',
          }}
       >
-         <Grid container spacing={6} sx={{ maxWidth: '50%', margin: 0 }}>
+         <Grid
+            container
+            spacing={0}
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
+            sx={{
+               width: '70%',
+            }}
+         >
             {cards}
          </Grid>
       </Box>
