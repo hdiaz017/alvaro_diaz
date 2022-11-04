@@ -11,8 +11,16 @@ import SVG from '../assets/react.svg';
 
 export const CardImage = () => {
    return (
-      <Box width={250} height={300}>
-         <Card sx={{ maxWidth: 250, maxHeight: 300 }}>
+      <Box
+         width={250}
+         sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: 0,
+         }}
+      >
+         <Card>
             <CardMedia
                component='img'
                height='250'
