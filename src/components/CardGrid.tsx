@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { CardImage } from './CardImage';
 
@@ -22,23 +22,32 @@ export const CardGrid = () => {
    return (
       <Box
          sx={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'flex',
+            backgroundColor: '#e3e5e8',
          }}
       >
-         <Grid
-            container
-            spacing={0}
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
+         <Typography variant='h6' component='div' sx={{ margin: '20px' }}>
+            - Diseños mas recientes
+         </Typography>
+         <Box
             sx={{
-               width: '70%',
+               alignItems: 'center',
+               justifyContent: 'center',
+               display: 'flex',
             }}
          >
-            {cards}
-         </Grid>
+            <Grid
+               container
+               spacing={0}
+               display='flex'
+               alignItems='center'
+               justifyContent='center'
+               sx={{
+                  width: '70%',
+               }}
+            >
+               {cards}
+            </Grid>
+         </Box>
       </Box>
    );
 };
