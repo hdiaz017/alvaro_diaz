@@ -17,7 +17,7 @@ export const NavBar = () => {
       <AppBar
          sx={{
             margin: 0,
-            padding: 0,
+            padding: '0px 75px 0px 75px',
             position: 'sticky',
             top: 0,
          }}
@@ -31,21 +31,7 @@ export const NavBar = () => {
                   Alvaro Díaz
                </NavLink>
             </Typography>
-            <TextField
-               size='small'
-               id='outlined-basic'
-               placeholder='Search...'
-               //    label='Search'
-               InputProps={{
-                  startAdornment: (
-                     <InputAdornment position='start'>
-                        <SearchIcon />
-                     </InputAdornment>
-                  ),
-               }}
-               variant='outlined'
-               sx={{ paddingRight: '2rem' }}
-            />
+
             <Stack direction='row' spacing={3} marginRight={3}>
                <Typography>
                   <NavLink
@@ -53,22 +39,6 @@ export const NavBar = () => {
                      style={{ color: 'white', textDecoration: 'none' }}
                   >
                      Gallery
-                  </NavLink>
-               </Typography>
-               <Typography>
-                  <NavLink
-                     to='shop'
-                     style={{ color: 'white', textDecoration: 'none' }}
-                  >
-                     Shop
-                  </NavLink>
-               </Typography>
-               <Typography>
-                  <NavLink
-                     to='about'
-                     style={{ color: 'white', textDecoration: 'none' }}
-                  >
-                     About
                   </NavLink>
                </Typography>
             </Stack>

@@ -8,7 +8,7 @@ export const AboutSection = () => {
          component='section'
          sx={{
             height: '100vh',
-            padding: '0px 100px 0px 100px',
+            mx: 'auto',
             display: 'flex',
             justifyContent: 'space-around',
             alignItems: 'center',

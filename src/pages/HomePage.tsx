@@ -6,13 +6,13 @@ export const HomePage = () => {
    return (
       <div>
          <AboutSection />
-         <Divider
+         {/* <Divider
             variant='middle'
             sx={{
-               borderColor: '#272727',
+               borderColor: '#b8c1cf',
             }}
-         />
-         <CardGrid />
+         /> */}
+         {/* <CardGrid /> */}
       </div>
    );
 };
