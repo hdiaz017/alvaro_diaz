@@ -1,11 +1,10 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { dibujos } from '../helpers/dibujos';
 import { CardImage } from './CardImage';
 
 export const CardGrid = () => {
-   const array = Array(10).fill('');
-
-   const cards = array.map((a) => (
+   const cards = dibujos.map((a) => (
       <Grid
          item
          xs='auto'
@@ -16,7 +15,7 @@ export const CardGrid = () => {
             margin: '20px',
          }}
       >
-         <CardImage />
+         <CardImage image={a} />
       </Grid>
    ));
    return (

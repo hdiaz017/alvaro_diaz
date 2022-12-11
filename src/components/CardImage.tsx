@@ -7,9 +7,12 @@ import {
    Typography,
    Button,
 } from '@mui/material';
-import SVG from '../assets/react.svg';
 
-export const CardImage = () => {
+type Card = {
+   image: string;
+};
+
+export const CardImage = ({ image }: Card) => {
    return (
       <Box
          width={250}
@@ -20,11 +23,11 @@ export const CardImage = () => {
             margin: 0,
          }}
       >
-         <Card>
+         <Card style={{ width: '250px' }}>
             <CardMedia
                component='img'
                height='250'
-               image={SVG}
+               image={image}
                alt='green iguana'
             />
             <CardContent>
