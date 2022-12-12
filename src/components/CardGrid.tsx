@@ -24,8 +24,12 @@ export const CardGrid = () => {
             backgroundColor: '#e3e5e8',
          }}
       >
-         <Typography variant='h6' component='div' sx={{ margin: '20px' }}>
-            - Diseños mas recientes
+         <Typography
+            variant='h3'
+            component='div'
+            sx={{ margin: '50px 100px 20px ' }}
+         >
+            Diseños
          </Typography>
          <Box
             sx={{

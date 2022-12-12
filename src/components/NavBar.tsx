@@ -1,16 +1,7 @@
-import {
-   AppBar,
-   IconButton,
-   InputAdornment,
-   TextField,
-   Toolbar,
-   Typography,
-} from '@mui/material';
+import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import SearchIcon from '@mui/icons-material/Search';
 
 export const NavBar = () => {
    return (

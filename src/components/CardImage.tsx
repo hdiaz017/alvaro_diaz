@@ -1,21 +1,15 @@
 import * as React from 'react';
-import {
-   Box,
-   Card,
-   CardContent,
-   CardMedia,
-   Typography,
-   Button,
-} from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 
 type Card = {
+   canvas: string;
    image: string;
+   price?: number;
 };
 
-export const CardImage = ({ image }: Card) => {
+export const CardImage = ({ canvas = '45x30cm', image, price = 500 }: Card) => {
    return (
       <Box
-         width={250}
          sx={{
             display: 'flex',
             justifyContent: 'center',
@@ -23,22 +17,75 @@ export const CardImage = ({ image }: Card) => {
             margin: 0,
          }}
       >
-         <Card style={{ width: '250px' }}>
+         <Card
+            style={{
+               width: '250px',
+               objectFit: 'fill',
+               backgroundSize: 'cover',
+            }}
+         >
             <CardMedia
                component='img'
-               height='250'
+               height='300'
                image={image}
                alt='green iguana'
             />
-            <CardContent>
-               <Typography
-                  gutterBottom
-                  variant='h6'
-                  component='p'
-                  sx={{ fontSize: '1rem' }}
+            <CardContent
+               style={{
+                  display: 'flex',
+                  flexFlow: 'column wrap',
+                  padding: '10px 20px',
+                  backgroundColor: '#262726',
+               }}
+            >
+               <Box
+                  sx={{
+                     display: 'flex',
+                     justifyContent: 'space-between',
+                     alignItems: 'center',
+                  }}
                >
-                  Lizard $500.00
-               </Typography>
+                  <Typography
+                     gutterBottom
+                     variant='h6'
+                     component='p'
+                     sx={{ fontSize: '1rem' }}
+                  >
+                     Lizard with coffee
+                  </Typography>
+                  <Typography
+                     gutterBottom
+                     variant='h6'
+                     component='p'
+                     sx={{ fontSize: '1rem', marginRight: '1rem' }}
+                  >
+                     ${price}
+                  </Typography>
+               </Box>
+               <Box
+                  sx={{
+                     display: 'flex',
+                     justifyContent: 'space-between',
+                     alignItems: 'center',
+                  }}
+               >
+                  <Typography
+                     gutterBottom
+                     variant='h6'
+                     component='p'
+                     sx={{ fontSize: '1rem', marginRight: '1rem' }}
+                  >
+                     {canvas}
+                  </Typography>
+                  <Typography
+                     gutterBottom
+                     variant='h6'
+                     component='p'
+                     sx={{ fontSize: '1rem', marginRight: '1rem' }}
+                  >
+                     -&gt;
+                  </Typography>
+               </Box>
             </CardContent>
          </Card>
       </Box>
