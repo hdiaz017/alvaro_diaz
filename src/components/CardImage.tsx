@@ -5,9 +5,16 @@ type Card = {
    canvas: string;
    image: string;
    price?: number;
+   name?: string;
+   id: string;
 };
 
-export const CardImage = ({ canvas = '45x30cm', image, price = 500 }: Card) => {
+export const CardImage = ({
+   canvas = '45x30cm',
+   image,
+   price = 500,
+   name,
+}: Card) => {
    return (
       <Box
          sx={{
@@ -51,7 +58,7 @@ export const CardImage = ({ canvas = '45x30cm', image, price = 500 }: Card) => {
                      component='p'
                      sx={{ fontSize: '1rem' }}
                   >
-                     Lizard with coffee
+                     {name}
                   </Typography>
                   <Typography
                      gutterBottom
