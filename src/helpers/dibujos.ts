@@ -1,0 +1,17 @@
+export const dibujos = [
+   'src/assets/fotosdibujos/CYMERA_20211004_195007.jpg',
+   'src/assets/fotosdibujos/CYMERA_20211011_162408.jpg',
+   // 'src/assets/fotosdibujos/CYMERA_20211011_172452.jpg',
+   'src/assets/fotosdibujos/CYMERA_20211018_174557.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220129_132118.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220209_191608.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220209_191705.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220209_191752.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220209_191831.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220209_191927.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220209_192030.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220702_131652.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220707_125151.jpg',
+   'src/assets/fotosdibujos/CYMERA_20220721_113817.jpg',
+   'src/assets/fotosdibujos/CYMERA_20221016_154400.jpg',
+];

@@ -1,11 +1,10 @@
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { dibujos } from '../helpers/dibujos';
 import { CardImage } from './CardImage';
 
 export const CardGrid = () => {
-   const array = Array(10).fill('');
-
-   const cards = array.map((a) => (
+   const cards = dibujos.map((a) => (
       <Grid
          item
          xs='auto'
@@ -16,29 +15,42 @@ export const CardGrid = () => {
             margin: '20px',
          }}
       >
-         <CardImage />
+         <CardImage image={a} />
       </Grid>
    ));
    return (
       <Box
          sx={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            display: 'flex',
+            backgroundColor: '#e3e5e8',
          }}
       >
-         <Grid
-            container
-            spacing={0}
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
+         <Typography
+            variant='h3'
+            component='div'
+            sx={{ margin: '50px 100px 20px ' }}
+         >
+            Diseños
+         </Typography>
+         <Box
             sx={{
-               width: '70%',
+               alignItems: 'center',
+               justifyContent: 'center',
+               display: 'flex',
             }}
          >
-            {cards}
-         </Grid>
+            <Grid
+               container
+               spacing={0}
+               display='flex'
+               alignItems='center'
+               justifyContent='center'
+               sx={{
+                  width: '70%',
+               }}
+            >
+               {cards}
+            </Grid>
+         </Box>
       </Box>
    );
 };

@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Footer, NavBar } from './components';
+import './App.css';
 
 import { AboutPage, GalleryPage, HomePage, ShopPage } from './pages/';
 
