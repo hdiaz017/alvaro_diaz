@@ -6,13 +6,6 @@ export const HomePage = () => {
    return (
       <div>
          <AboutSection />
-         {/* <Divider
-            variant='middle'
-            sx={{
-               borderColor: '#b8c1cf',
-            }}
-         /> */}
-         {/* <CardGrid /> */}
       </div>
    );
 };
