@@ -6,7 +6,7 @@ type Card = {
    image: string;
    price?: number;
    name?: string;
-   id: string;
+   id: number;
 };
 
 export const CardImage = ({

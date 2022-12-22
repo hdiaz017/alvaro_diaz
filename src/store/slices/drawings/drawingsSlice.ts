@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { supabase } from '../../../supabase/client';
 
-type Drawings = {
+export type Drawings = {
    id: number;
    created_at: string;
    name: string;
@@ -23,13 +23,13 @@ const initialState: InitialState = {
 
 export const getDrawings = createAsyncThunk<Drawings[]>(
    'drawings/getDrawings',
-   async (_, thunkApi) => {
+   async () => {
       try {
          const { data } = await supabase.from('dibujos').select('*');
          return data;
       } catch (err) {
          const { error } = await supabase.from('dibujos').select('*');
-         return thunkApi.rejectWithValue(error);
+         return error;
       }
    },
 );
