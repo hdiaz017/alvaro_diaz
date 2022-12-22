@@ -1,12 +1,13 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React from 'react';
+
 import { useSelector } from 'react-redux';
-import { dibujos } from '../helpers/dibujos';
+// import { dibujos } from '../helpers/dibujos';
+import { Drawings } from '../store/slices/drawings/drawingsSlice';
 import { RootState } from '../store/store';
 import { CardImage } from './CardImage';
 
 export const CardGrid = () => {
-   const drawings: Array<Record<string, string>> = useSelector(
+   const drawings: Drawings[] = useSelector(
       (state: RootState) => state.drawings.drawings,
    );
 
@@ -26,7 +27,7 @@ export const CardGrid = () => {
             image={d.url}
             canvas='45x30'
             name={d.name}
-            price={parseInt(d.price)}
+            price={d.price}
             key={d.id}
             id={d.id}
          />

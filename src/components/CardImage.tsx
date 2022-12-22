@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 type Card = {
    canvas: string;
    image: string;
    price?: number;
    name?: string;
-   id: string;
+   id: number;
 };
 
 export const CardImage = ({
@@ -14,7 +15,9 @@ export const CardImage = ({
    image,
    price = 500,
    name,
+   id,
 }: Card) => {
+   const navigate = useNavigate();
    return (
       <Box
          sx={{
@@ -30,6 +33,7 @@ export const CardImage = ({
                objectFit: 'fill',
                backgroundSize: 'cover',
             }}
+            onClick={() => navigate(`/image/${id}`)}
          >
             <CardMedia
                component='img'
