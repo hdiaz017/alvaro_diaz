@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import { drawingsSlice } from './slices/drawings/drawingsSlice';
 
 export const store = configureStore({

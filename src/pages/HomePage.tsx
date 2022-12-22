@@ -1,30 +1,17 @@
-import { Divider } from '@mui/material';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { CardGrid } from '../components';
+
 import { AboutSection } from '../components/AboutSection';
-import {
-   setDrawings,
-   startLoadingDrawigns,
-} from '../store/slices/drawings/drawingsSlice';
-import { supabase } from '../supabase/client';
+import { getDrawings } from '../store/slices/drawings/drawingsSlice';
+
+import { AppDispatch } from '../store/store';
 
 export const HomePage = () => {
-   const dispatch = useDispatch();
+   const dispatch = useDispatch<AppDispatch>();
 
    useEffect(() => {
-      const fetchDrawings = async () => {
-         dispatch(startLoadingDrawigns());
-         let { data: dibujos, error } = await supabase
-            .from('dibujos')
-            .select('*');
-
-         dispatch(setDrawings(dibujos));
-      };
-
-      fetchDrawings();
+      dispatch(getDrawings());
    }, []);
-
    return (
       <div>
          <AboutSection />
