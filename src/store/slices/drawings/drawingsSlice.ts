@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { supabase } from '../../../supabase/client';
 
-type Drawings = {
+export type Drawings = {
    id: number;
    created_at: string;
    name: string;
@@ -62,4 +62,4 @@ export const drawingsSlice = createSlice({
 });
 // Action creators are generated for each case reducer function
 // export const { increment } = drawingsSlice.actions;
-export default drawingsSlice.reducer;
+// export default drawingsSlice.reducer;

@@ -1,12 +1,22 @@
 import * as React from 'react';
-import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import {
+   Box,
+   Card,
+   CardContent,
+   CardMedia,
+   Icon,
+   styled,
+   Typography,
+} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 type Card = {
    canvas: string;
    image: string;
    price?: number;
    name?: string;
-   id: string;
+   id: number;
 };
 
 export const CardImage = ({
@@ -14,7 +24,14 @@ export const CardImage = ({
    image,
    price = 500,
    name,
+   id,
 }: Card) => {
+   const navigate = useNavigate();
+   const priceFormat = new Intl.NumberFormat('es-MX', {
+      style: 'currency',
+      currency: 'MXN',
+   });
+
    return (
       <Box
          sx={{
@@ -26,10 +43,13 @@ export const CardImage = ({
       >
          <Card
             style={{
-               width: '250px',
+               width: '300px',
                objectFit: 'fill',
                backgroundSize: 'cover',
+               cursor: 'pointer',
+               transition: 'transform 500ms ease',
             }}
+            onClick={() => navigate(`/image/${id}`)}
          >
             <CardMedia
                component='img'
@@ -40,7 +60,8 @@ export const CardImage = ({
             <CardContent
                style={{
                   display: 'flex',
-                  flexFlow: 'column wrap',
+                  flexFlow: 'row wrap',
+                  justifyContent: 'space-between',
                   padding: '10px 20px',
                   backgroundColor: '#262726',
                }}
@@ -48,7 +69,8 @@ export const CardImage = ({
                <Box
                   sx={{
                      display: 'flex',
-                     justifyContent: 'space-between',
+                     flexFlow: 'column wrap',
+                     justifyContent: 'left',
                      alignItems: 'center',
                   }}
                >
@@ -66,13 +88,13 @@ export const CardImage = ({
                      component='p'
                      sx={{ fontSize: '1rem', marginRight: '1rem' }}
                   >
-                     ${price}
+                     {priceFormat.format(price)}
                   </Typography>
                </Box>
                <Box
                   sx={{
                      display: 'flex',
-                     justifyContent: 'space-between',
+                     justifyContent: 'right',
                      alignItems: 'center',
                   }}
                >
@@ -82,15 +104,7 @@ export const CardImage = ({
                      component='p'
                      sx={{ fontSize: '1rem', marginRight: '1rem' }}
                   >
-                     {canvas}
-                  </Typography>
-                  <Typography
-                     gutterBottom
-                     variant='h6'
-                     component='p'
-                     sx={{ fontSize: '1rem', marginRight: '1rem' }}
-                  >
-                     -&gt;
+                     <ArrowForwardIcon />
                   </Typography>
                </Box>
             </CardContent>
