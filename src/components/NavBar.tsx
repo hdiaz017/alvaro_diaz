@@ -1,9 +1,12 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Badge, IconButton, Toolbar, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { NavLink } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 export const NavBar = () => {
+   const cart = useSelector((state: RootState) => state.cart.quantity);
    return (
       <AppBar
          sx={{
@@ -34,7 +37,9 @@ export const NavBar = () => {
                </Typography>
             </Stack>
             <IconButton edge='end' aria-label='logo'>
-               <ShoppingCartIcon />
+               <Badge badgeContent={cart} color='error'>
+                  <ShoppingCartIcon />
+               </Badge>
             </IconButton>
          </Toolbar>
       </AppBar>

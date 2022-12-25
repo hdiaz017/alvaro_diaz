@@ -1,15 +1,24 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, AppDispatch } from '../store/store';
 import { Drawings } from '../store/slices/drawings/drawingsSlice';
 import { useEffect } from 'react';
 import { Box, Button, Typography } from '@mui/material';
+import { addToCart, removeFromCart } from '../store/slices/cart/cartSlice';
 
 export const ImagePage = () => {
+   const dispatch = useDispatch<AppDispatch>();
    const navigate = useNavigate();
    const items = useSelector((state: RootState) => state.drawings.drawings);
+   const cartItems = useSelector((state: RootState) => state.cart.cart);
 
    const { id } = useParams();
+
+   const cartItem: Drawings | undefined = cartItems.find((item) => {
+      if (id) {
+         return item.id == parseInt(id);
+      }
+   });
 
    useEffect(() => {
       window.scrollTo(0, 0);
@@ -28,6 +37,17 @@ export const ImagePage = () => {
       currency: 'MXN',
    });
    const currency = item?.price && priceFormat.format(item.price);
+
+   const addToCartFunc = (item: Drawings | undefined) => {
+      if (item) {
+         dispatch(addToCart(item));
+      }
+   };
+   const removeFromCartFunc = (item: Drawings | undefined) => {
+      if (item) {
+         dispatch(removeFromCart(item));
+      }
+   };
    return (
       <>
          <div
@@ -60,16 +80,31 @@ export const ImagePage = () => {
                      <strong>Tamaño: </strong> 45x30cm
                   </li>
                </Typography>
-               <Button
-                  style={{
-                     backgroundColor: '#2262cc',
-                     color: 'white',
-                     marginTop: '30px',
-                  }}
-                  variant='contained'
-               >
-                  Agregar al Carrito
-               </Button>
+               {!cartItem ? (
+                  <Button
+                     style={{
+                        backgroundColor: '#2262cc',
+                        color: 'white',
+                        marginTop: '30px',
+                     }}
+                     variant='contained'
+                     onClick={() => addToCartFunc(item)}
+                  >
+                     Agregar al Carrito
+                  </Button>
+               ) : (
+                  <Button
+                     style={{
+                        backgroundColor: '#2262cc',
+                        color: 'white',
+                        marginTop: '30px',
+                     }}
+                     variant='contained'
+                     onClick={() => removeFromCartFunc(item)}
+                  >
+                     Remover del Carrito
+                  </Button>
+               )}
             </Box>
          </div>
       </>
