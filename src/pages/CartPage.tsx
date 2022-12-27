@@ -18,7 +18,7 @@ export const CartPage = () => {
       </>
    ) : (
       <>
-         <Box style={{ height: '100vh' }}>
+         <Box style={{ height: '100vh' }} mt={10} ml={30}>
             <CartTable />
          </Box>
       </>
