@@ -7,6 +7,7 @@ export type Drawings = {
    name: string;
    url: string;
    price: number;
+   size: string;
 };
 
 type InitialState = {

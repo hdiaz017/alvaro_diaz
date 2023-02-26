@@ -52,7 +52,7 @@ export const CardGrid = () => {
       >
          <CardImage
             image={d.url}
-            canvas='45x30'
+            canvas={d.size}
             name={d.name}
             price={d.price}
             key={d.id}
@@ -69,6 +69,7 @@ export const CardGrid = () => {
             justifyContent: 'center',
          }}
          mt={5}
+         mb={7}
       >
          {/* <Typography
             variant='h3'

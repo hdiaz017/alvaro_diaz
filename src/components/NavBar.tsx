@@ -36,11 +36,16 @@ export const NavBar = () => {
                   </NavLink>
                </Typography>
             </Stack>
-            <IconButton edge='end' aria-label='logo'>
-               <Badge badgeContent={cart} color='error'>
-                  <ShoppingCartIcon />
-               </Badge>
-            </IconButton>
+            <NavLink
+               to='cart'
+               style={{ color: 'white', textDecoration: 'none' }}
+            >
+               <IconButton edge='end' aria-label='logo'>
+                  <Badge badgeContent={cart} color='error'>
+                     <ShoppingCartIcon />
+                  </Badge>
+               </IconButton>
+            </NavLink>
          </Toolbar>
       </AppBar>
    );

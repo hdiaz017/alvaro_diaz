@@ -51,7 +51,7 @@ export const AboutSection = () => {
                component='img'
                height='500'
                image={avatarPhoto}
-               alt='green iguana'
+               alt='Alvaro_Diaz'
             />
          </Card>
       </Box>
