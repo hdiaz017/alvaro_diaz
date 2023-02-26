@@ -77,7 +77,7 @@ export const ImagePage = () => {
                </Typography>
                <Typography variant='h6' mt={4}>
                   <li>
-                     <strong>Tamaño: </strong> 45x30cm
+                     <strong>Tamaño: </strong> {item?.size}
                   </li>
                </Typography>
                {!cartItem ? (

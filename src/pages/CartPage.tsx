@@ -1,11 +1,15 @@
-import { Box, Typography } from '@mui/material';
-import React from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { CartTable } from '../components/CartTable';
+import { Box, Typography } from '@mui/material';
+
 import { RootState } from '../store/store';
+import { CartTable } from '../components/CartTable';
 
 export const CartPage = () => {
-   const { cart, quantity } = useSelector((state: RootState) => state.cart);
+   const { quantity } = useSelector((state: RootState) => state.cart);
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
 
    return quantity <= 0 ? (
       <>
@@ -17,10 +21,8 @@ export const CartPage = () => {
          </Box>
       </>
    ) : (
-      <>
-         <Box style={{ height: '100vh' }} mt={10} ml={30}>
-            <CartTable />
-         </Box>
-      </>
+      <Box style={{ height: '100vh' }} mt={10} ml={30}>
+         <CartTable />
+      </Box>
    );
 };

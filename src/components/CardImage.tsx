@@ -19,13 +19,7 @@ type Card = {
    id: number;
 };
 
-export const CardImage = ({
-   canvas = '45x30cm',
-   image,
-   price = 500,
-   name,
-   id,
-}: Card) => {
+export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
    const navigate = useNavigate();
    const priceFormat = new Intl.NumberFormat('es-MX', {
       style: 'currency',
@@ -43,7 +37,7 @@ export const CardImage = ({
       >
          <Card
             style={{
-               width: '300px',
+               width: '250px',
                objectFit: 'fill',
                backgroundSize: 'cover',
                cursor: 'pointer',
@@ -51,12 +45,7 @@ export const CardImage = ({
             }}
             onClick={() => navigate(`/image/${id}`)}
          >
-            <CardMedia
-               component='img'
-               height='300'
-               image={image}
-               alt='green iguana'
-            />
+            <CardMedia component='img' height='250' image={image} alt={name} />
             <CardContent
                style={{
                   display: 'flex',

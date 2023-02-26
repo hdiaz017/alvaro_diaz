@@ -13,20 +13,17 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
-import React from 'react';
 
 export const Footer = () => {
    return (
       <AppBar
-         position='static'
+         position='fixed'
          color='primary'
          sx={{
             top: 'auto',
             bottom: 0,
-            display: 'flex',
-            justifyContent: 'center',
-            // alignItems: 'center',
-            marginTop: '50px',
+            backgroundColor: 'black',
+            color: 'white',
          }}
       >
          <Toolbar
@@ -57,7 +54,7 @@ export const Footer = () => {
                      <FacebookIcon fontSize='small' />
                   </IconButton>
                </Link>
-               <Link
+               {/* <Link
                   href='https://twitter.com/Alvincouture'
                   rel='noopener'
                   target='_blank'
@@ -65,10 +62,10 @@ export const Footer = () => {
                   <IconButton>
                      <TwitterIcon fontSize='small' />
                   </IconButton>
-               </Link>
+               </Link> */}
 
                <Link
-                  href='https://www.instagram.com/alvin.diaz/'
+                  href='https://www.instagram.com/alvaro.diaz.arte/'
                   rel='noopener'
                   target='_blank'
                >
@@ -76,7 +73,7 @@ export const Footer = () => {
                      <InstagramIcon fontSize='small' />
                   </IconButton>
                </Link>
-               <Link
+               {/* <Link
                   href='https://t.me/AlvinGrana'
                   rel='noopener'
                   target='_blank'
@@ -84,7 +81,7 @@ export const Footer = () => {
                   <IconButton>
                      <TelegramIcon fontSize='small' />
                   </IconButton>
-               </Link>
+               </Link> */}
             </Stack>
          </Toolbar>
       </AppBar>
