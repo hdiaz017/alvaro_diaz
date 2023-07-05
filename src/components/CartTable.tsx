@@ -24,7 +24,7 @@ export const CartTable = () => {
    const { cart: rows, quantity } = useSelector(
       (state: RootState) => state.cart,
    );
-   const headers = ['Ilustración', 'Nombre', 'Precio', ''];
+   const headers = ['Ilustración', 'Nombre', 'Tamaño', 'Precio', ''];
    const removeFromCartFunc = (item: Drawings | undefined) => {
       if (item) {
          dispatch(removeFromCart(item));
