@@ -71,18 +71,12 @@ export const CardGrid = () => {
          mt={5}
          mb={7}
       >
-         {/* <Typography
-            variant='h3'
-            component='div'
-            sx={{ margin: '50px 100px 20px ' }}
-         >
-            Diseños
-         </Typography> */}
          <Box
             sx={{
                display: 'flex',
                alignItems: 'center',
                justifyContent: 'center',
+               width: { xs: '100%', sm: '60%' },
             }}
          >
             <ArrowBackIosNewIcon
@@ -91,12 +85,14 @@ export const CardGrid = () => {
             />
             <Grid
                container
-               spacing={0}
-               display='flex'
-               alignItems='center'
-               justifyContent='center'
                sx={{
-                  width: '60%',
+                  display: 'grid',
+                  width: '100%',
+                  gridTemplateColumns: {
+                     xs: 'repeat(auto-fit, minmax(150px, 1fr))',
+                     sm: 'repeat(auto-fit, minmax(250px, 1fr))',
+                  },
+                  gap: { xs: '10px', sm: '30px' },
                }}
             >
                {cards}

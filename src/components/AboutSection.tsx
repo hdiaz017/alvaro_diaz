@@ -1,16 +1,19 @@
-import { Box, Card, CardMedia, Typography } from '@mui/material';
+import { Box, Card, CardMedia, Stack, Typography } from '@mui/material';
 
 import avatarPhoto from '../assets/about_photo.jpg';
 
 export const AboutSection = () => {
    return (
       <Box
-         component='section'
+         // direction={{ xs: 'column', sm: 'row' }}
+         // component='section'
          sx={{
-            height: '100vh',
+            height: { sm: '100vh' },
             mx: 'auto',
             display: 'flex',
-            justifyContent: 'space-around',
+
+            flexDirection: { xs: 'column ', sm: 'column', md: 'row' },
+            justifyContent: { xs: 'center', sm: 'space-around' },
             alignItems: 'center',
             backgroundColor: '#e3e5e8',
          }}
@@ -18,7 +21,9 @@ export const AboutSection = () => {
          <Typography
             align='justify'
             sx={{
-               width: '500px',
+               width: { xs: '250px', sm: '500px' },
+               fontSize: { xs: '12px', sm: '1rem' },
+               marginTop: { xs: '30px' },
             }}
          >
             <strong>(In: alvin.diaz)</strong> Diseñador. Dibujante. Deportista.
@@ -45,11 +50,15 @@ export const AboutSection = () => {
          <Card
             sx={{
                borderRadius: '20px',
+               marginTop: { xs: '30px', sm: '30px' },
             }}
          >
             <CardMedia
                component='img'
-               height='500'
+               // height='500'
+               sx={{
+                  height: { xs: '250px', sm: '500px' },
+               }}
                image={avatarPhoto}
                alt='Alvaro_Diaz'
             />

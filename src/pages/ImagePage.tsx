@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { Drawings } from '../store/slices/drawings/drawingsSlice';
 import { useEffect } from 'react';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Card, CardMedia, Typography } from '@mui/material';
 import { addToCart, removeFromCart } from '../store/slices/cart/cartSlice';
 
 export const ImagePage = () => {
@@ -50,20 +50,34 @@ export const ImagePage = () => {
    };
    return (
       <>
-         <div
-            style={{
-               height: '100vh',
+         <Box
+            sx={{
+               // height: { sm: '100vh' },
+               width: '100%',
                display: 'flex',
+               flexDirection: { xs: 'column ', sm: 'column', md: 'row' },
                justifyContent: 'center',
                alignItems: 'center',
-               margin: '0px 300px 0px 100px',
+               margin: { sm: '0px 300px 0px 100px' },
             }}
          >
-            <img
-               src={item?.url}
-               alt={item?.name}
-               style={{ height: '700px', borderRadius: '20px' }}
-            />
+            <Card
+               sx={{
+                  borderRadius: '20px',
+                  marginTop: { xs: '30px', sm: '30px' },
+               }}
+            >
+               <CardMedia
+                  component='img'
+                  image={item?.url}
+                  alt={item?.name}
+                  sx={{
+                     height: { xs: '350px', sm: '700px' },
+                     borderRadius: '20px',
+                  }}
+               />
+            </Card>
+
             <Box ml={5}>
                <Typography variant='h6' mt={4}>
                   <li>
@@ -106,7 +120,7 @@ export const ImagePage = () => {
                   </Button>
                )}
             </Box>
-         </div>
+         </Box>
       </>
    );
 };

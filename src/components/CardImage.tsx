@@ -36,16 +36,20 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
          }}
       >
          <Card
-            style={{
-               width: '250px',
+            sx={{
+               width: { xs: '150px', sm: '250px' },
                objectFit: 'fill',
                backgroundSize: 'cover',
                cursor: 'pointer',
-               transition: 'transform 500ms ease',
             }}
             onClick={() => navigate(`/image/${id}`)}
          >
-            <CardMedia component='img' height='250' image={image} alt={name} />
+            <CardMedia
+               component='img'
+               sx={{ height: { xs: '150px', sm: ' 250px' } }}
+               image={image}
+               alt={name}
+            />
             <CardContent
                style={{
                   display: 'flex',
@@ -67,7 +71,7 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
                      gutterBottom
                      variant='h6'
                      component='p'
-                     sx={{ fontSize: '1rem' }}
+                     sx={{ fontSize: { xs: '.75rem', sm: '1rem' } }}
                   >
                      {name}
                   </Typography>
@@ -75,7 +79,10 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
                      gutterBottom
                      variant='h6'
                      component='p'
-                     sx={{ fontSize: '1rem', marginRight: '1rem' }}
+                     sx={{
+                        fontSize: { xs: '.75rem', sm: '1rem' },
+                        marginRight: { xs: '.75rem', sm: '1rem' },
+                     }}
                   >
                      {priceFormat.format(price)}
                   </Typography>
@@ -91,7 +98,10 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
                      gutterBottom
                      variant='h6'
                      component='p'
-                     sx={{ fontSize: '1rem', marginRight: '1rem' }}
+                     sx={{
+                        fontSize: '1rem',
+                        marginRight: { xs: '.75rem', sm: '1rem' },
+                     }}
                   >
                      <ArrowForwardIcon />
                   </Typography>
