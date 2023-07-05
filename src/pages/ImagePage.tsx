@@ -52,13 +52,16 @@ export const ImagePage = () => {
       <>
          <Box
             sx={{
-               // height: { sm: '100vh' },
-               width: '100%',
+               // height: { xs: '100vh' },
+               // width: '100%',
                display: 'flex',
                flexDirection: { xs: 'column ', sm: 'column', md: 'row' },
                justifyContent: 'center',
                alignItems: 'center',
-               margin: { sm: '0px 300px 0px 100px' },
+               margin: {
+                  xs: '0px 0px 100px 0px',
+                  sm: '0px 300px 0px 100px',
+               },
             }}
          >
             <Card

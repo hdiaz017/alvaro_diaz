@@ -3,6 +3,8 @@ import { RootState } from '../store/store';
 import {
    Box,
    Button,
+   Card,
+   CardMedia,
    Table,
    TableBody,
    TableCell,
@@ -22,7 +24,7 @@ export const CartTable = () => {
    const { cart: rows, quantity } = useSelector(
       (state: RootState) => state.cart,
    );
-   const headers = ['Ilustración', 'Nombre', 'Tamaño', 'Precio', ''];
+   const headers = ['Ilustración', 'Nombre', 'Precio', ''];
    const removeFromCartFunc = (item: Drawings | undefined) => {
       if (item) {
          dispatch(removeFromCart(item));
@@ -43,20 +45,33 @@ export const CartTable = () => {
       <Box
          sx={{
             display: 'flex',
-            flexFlow: 'row nowrap',
-            justifyContent: 'space-around',
+            width: '100%',
+            flexDirection: { xs: 'column', sm: 'column', md: 'row' },
+            justifyContent: { xs: 'center', sm: 'space-around' },
+            alignItems: { xs: 'center', sm: 'flex-start' },
             marginBottom: '5em',
+            // border: '1px solid red',
          }}
       >
-         <Box>
-            <Typography variant='h3' component='p' mb={2}>
+         <Box
+            sx={{
+               // maxWidth: { xs: 50, sm: 800 },
+               width: '100%',
+            }}
+         >
+            <Typography
+               variant='h3'
+               component='p'
+               mb={2}
+               sx={{ fontSize: { xs: '2rem', sm: '3rem' } }}
+            >
                Carrito
             </Typography>
             <TableContainer>
                <Table
                   stickyHeader
                   sx={{
-                     maxWidth: 800,
+                     maxWidth: { xs: 50, sm: 500, lg: 800, xl: 1200 },
                      width: '100vw',
                   }}
                >
@@ -83,14 +98,17 @@ export const CartTable = () => {
                            }}
                         >
                            <TableCell component='th' scope='row'>
-                              <img
-                                 src={row.url}
-                                 alt={row.name}
-                                 style={{
-                                    height: '150px',
-                                    outline: '1px solid lightgrey',
-                                 }}
-                              />
+                              <Card>
+                                 <CardMedia
+                                    component='img'
+                                    image={row.url}
+                                    alt={row.name}
+                                    sx={{
+                                       height: { xs: '100px', sm: '150px' },
+                                       outline: '1px solid lightgrey',
+                                    }}
+                                 />
+                              </Card>
                            </TableCell>
                            <TableCell sx={{ color: 'black' }}>
                               {row.name}

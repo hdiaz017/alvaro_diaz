@@ -37,7 +37,7 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
       >
          <Card
             sx={{
-               width: { xs: '150px', sm: '250px' },
+               width: { xs: '130px', sm: '250px' },
                objectFit: 'fill',
                backgroundSize: 'cover',
                cursor: 'pointer',
@@ -46,7 +46,7 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
          >
             <CardMedia
                component='img'
-               sx={{ height: { xs: '150px', sm: ' 250px' } }}
+               sx={{ height: { xs: '130px', sm: ' 250px' } }}
                image={image}
                alt={name}
             />
@@ -99,11 +99,13 @@ export const CardImage = ({ canvas, image, price = 500, name, id }: Card) => {
                      variant='h6'
                      component='p'
                      sx={{
-                        fontSize: '1rem',
+                        // fontSize: '1rem',
                         marginRight: { xs: '.75rem', sm: '1rem' },
                      }}
                   >
-                     <ArrowForwardIcon />
+                     <ArrowForwardIcon
+                        sx={{ fontSize: { xs: '1rem', sm: '1.5rem' } }}
+                     />
                   </Typography>
                </Box>
             </CardContent>

@@ -81,7 +81,7 @@ export const CardGrid = () => {
          >
             <ArrowBackIosNewIcon
                onClick={prevPage}
-               sx={{ fontSize: '50px', cursor: 'pointer' }}
+               sx={{ fontSize: { xs: '30px', sm: '50px' }, cursor: 'pointer' }}
             />
             <Grid
                container
@@ -92,14 +92,14 @@ export const CardGrid = () => {
                      xs: 'repeat(auto-fit, minmax(150px, 1fr))',
                      sm: 'repeat(auto-fit, minmax(250px, 1fr))',
                   },
-                  gap: { xs: '10px', sm: '30px' },
+                  gap: { xs: '1px', sm: '30px' },
                }}
             >
                {cards}
             </Grid>
             <ArrowForwardIosIcon
                onClick={nextPage}
-               sx={{ fontSize: '50px', cursor: 'pointer' }}
+               sx={{ fontSize: { xs: '30px', sm: '50px' }, cursor: 'pointer' }}
             />
          </Box>
       </Box>

@@ -6,9 +6,9 @@ export const AboutSection = () => {
    return (
       <Box
          // direction={{ xs: 'column', sm: 'row' }}
-         // component='section'
+         component='section'
          sx={{
-            height: { sm: '100vh' },
+            height: { xs: '100%', sm: '100vh' },
             mx: 'auto',
             display: 'flex',
 
@@ -51,6 +51,7 @@ export const AboutSection = () => {
             sx={{
                borderRadius: '20px',
                marginTop: { xs: '30px', sm: '30px' },
+               marginBottom: { xs: '90px', sm: '50px' },
             }}
          >
             <CardMedia
